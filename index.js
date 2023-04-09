@@ -4,7 +4,7 @@ let cors=require('cors')
 
 let {connection}=require("./db")
 app.use(cors())
-let {menRouter}=require("../Backend/Route/Men.routes")
+let {menRouter}=require("./Route/Men.routes")
 app.use(express.json())
 app.use("/men",menRouter)
 app.listen(process.env.port,async()=>{
