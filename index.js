@@ -15,5 +15,5 @@ app.listen(process.env.port,async()=>{
         console.log("Cannot connect to DB")
         console.log(err)
     }
-    console.log("Server is running at port 4500")
+    console.log("Server is running at port 8080")
 })

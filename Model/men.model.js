@@ -13,7 +13,7 @@ let menSchema=mongoose.Schema({
   }
 )
 
-let MenModel=mongoose.model("mendata",menSchema)
+let MenModel=mongoose.model("mendatas",menSchema)
 module.exports={
     MenModel
 }
