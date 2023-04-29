@@ -3,7 +3,7 @@ let menSchema=mongoose.Schema({
     image: String,
     brand: String,
     product: String,
-    price: Number,
+    price: String,
     strike: Number,
     discount: String,
     quantity:Number

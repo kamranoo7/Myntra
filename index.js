@@ -5,8 +5,10 @@ let cors=require('cors')
 let {connection}=require("./db")
 app.use(cors())
 let {menRouter}=require("./Route/Men.routes")
+const { userRouter } = require("./Route/user.routes")
 app.use(express.json())
 app.use("/men",menRouter)
+app.use("/users",userRouter)
 app.listen(process.env.port,async()=>{
     try{
         await connection
