@@ -10,19 +10,21 @@ userRouter.post("/register",async(req,res)=>{
     if(user){
         res.status(400).send({"msg":"user already exist Please Login"})
         
+    }else{
+        try{
+            bcrypt.hash(pass,5, async(err, hash)=> {
+                let user=new UserModel({email,name,city,pass:hash})
+        
+        await user.save()
+        res.status(200).send({"msg":"New user has been register"})
+            });
+            
+        
+        }catch(err){
+        res.status(400).send({"msg":err.message})
+        }
     }
-try{
-    bcrypt.hash(pass,5, async(err, hash)=> {
-        let user=new UserModel({email,name,city,pass:hash})
 
-await user.save()
-res.status(200).send({"msg":"New user has been register"})
-    });
-    
-
-}catch(err){
-res.status(400).send({"msg":err.message})
-}
 })
 //login
 userRouter.post("/login",async(req,res)=>{
